@@ -38,12 +38,28 @@ $ cd wp-content/themes/twentytwentyone-valentinus
 $ wp-env start
 ``
 
+### Select the theme
+
+After the Docker environment is started, we only need to select the theme.
+Login to the admin section:
+http://localhost:8888/wp-admin/
+
+username: admin
+password: password
+
+Go to: http://localhost:8888/wp-admin/themes.php
+And activate Valentinus Twenty Twenty One
+
 ### Ending
 
 ``
 $ wp-env stop
 ``
 
-## Credits
+## Development
 This child theme started using the in-dept review of the Twenty Twenty One with tutorial how to create a child theme from:
 https://kinsta.com/blog/twenty-twenty-one-theme/
+Check this blog post for ideas to create your own custom Twenty Twenty One child theme.
+
+
+
