@@ -1,6 +1,6 @@
 <?php
 
-/* enqueue scripts and style from parent theme */
+/* Enqueue scripts and style from parent theme. */
 function twentytwentyone_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_uri(),
 	array( 'twenty-twenty-one-style' ), wp_get_theme()->get('Version') );
