@@ -8,16 +8,16 @@ https://make.wordpress.org/cli/handbook/guides/installing/
 
 Change to the directory where you want to install this setup and install WP.
 
-``
+```
 $ wp core download
-``
+```
 
 Next change into the themes directory and checkout this repository.
 
-``
+```
 $ cd wp-content/themes
 $ git clone https://github.com/jooplaan/twentytwentyone-valentinus.git
-``
+```
 
 ## Development with Docker
 
@@ -33,10 +33,10 @@ https://developer.wordpress.org/block-editor/packages/packages-env/
 
 Change to the directory that contains a this child theme:
 
-``
+```
 $ cd wp-content/themes/twentytwentyone-valentinus
 $ wp-env start
-``
+```
 
 ### Select the theme
 
@@ -52,9 +52,9 @@ And activate Valentinus Twenty Twenty One
 
 ### Ending
 
-``
+```
 $ wp-env stop
-``
+```
 
 ## Development
 This child theme started using the in-dept review of the Twenty Twenty One with tutorial how to create a child theme from:
