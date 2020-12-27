@@ -18,7 +18,9 @@ function valentinus_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'valentinus_scripts' );
 
-
+/**
+ * Example of a custom block pattern.
+ */
 add_action( 'init', function(){
 
 	register_block_pattern_category(
