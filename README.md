@@ -1,6 +1,13 @@
 # Valentinus Twenty Twenty One
 A WordPress child theme for the Twenty Twenty-One theme.
 
+## Fresh install using zip file
+Simplest way to use this:
+
+* [Download the latest version](https://github.com/jooplaan/twentytwentyone-valentinus/releases/latest)
+* Unzip or untar the dowloaded archive
+* Put the folder to your theme folder of your install
+
 ## Fresh install using wp-cli
 
 Install wp-cli if you haven't already:
