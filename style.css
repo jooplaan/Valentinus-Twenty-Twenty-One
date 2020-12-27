@@ -1,0 +1,29 @@
+/*
+Theme Name: Valentinus Twenty Twenty One
+Theme URI: https://www.jooplaan.com/valentinus
+Description: A Twenty Twenty-One Child Theme.
+Author: Joop Laan
+Author URI: https://www.jooplaan.com/
+Template: twentytwentyone
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+
+:root{
+	/* Font Family */
+	--global--font-primary-child-sans-serif: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif);
+
+	--global--font-family-child-serif: var(--font-headings, "Times New Roman", Times, serif);
+}
+
+
+h1,
+.h1,
+.entry-title,
+h2,
+.h2 {
+	font-family: var(--global--font-family-child-serif);
+}
