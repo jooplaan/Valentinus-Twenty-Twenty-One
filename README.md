@@ -7,6 +7,8 @@ Simplest way to use this:
 * [Download the latest version](https://github.com/jooplaan/twentytwentyone-valentinus/releases/latest)
 * Unzip or untar the dowloaded archive
 * Put the folder to your theme folder of your install
+* Activate the Valentinus Twenty Twenty One child theme in the WordPress admin
+* Hack it to your liking
 
 ## Fresh install using wp-cli
 
