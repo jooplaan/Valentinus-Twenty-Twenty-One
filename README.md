@@ -1,6 +1,8 @@
 # Valentinus Twenty Twenty One
 A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hack the Twenty Twenty One theme.
 
+![Screenshot](https://raw.githubusercontent.com/jooplaan/twentytwentyone-valentinus/main/screenshot.png)
+
 ## Added features
 
 * Optional right sidebar with widget area ([v1.1](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.1))
