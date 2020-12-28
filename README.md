@@ -1,13 +1,15 @@
 # Valentinus Twenty Twenty One
-A WordPress child theme for the Twenty Twenty-One theme.
+A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hack the Twenty Twenty One theme.
 
 ## Added features
 
 * Optional right sidebar with widget area
 * Custom Block pattern example
 
-## Fresh install using zip file
-Simplest way to use this:
+## How to use this
+
+### Fresh install using zip file
+Simplest way to get started with this child theme:
 
 * [Download the latest version](https://github.com/jooplaan/twentytwentyone-valentinus/releases/latest)
 * Unzip or untar the dowloaded archive
@@ -15,7 +17,7 @@ Simplest way to use this:
 * Activate the Valentinus Twenty Twenty One child theme in the WordPress admin
 * Hack it to your liking
 
-## Fresh install using wp-cli
+### Or.. fresh install using wp-cli and Docker
 
 Install wp-cli if you haven't already:
 https://make.wordpress.org/cli/handbook/guides/installing/
@@ -25,7 +27,6 @@ Change to the directory where you want to install this setup and install WP.
 ```
 $ wp core download
 ```
-
 Next change into the themes directory and clone this repository.
 
 ```
@@ -33,14 +34,14 @@ $ cd wp-content/themes
 $ git clone https://github.com/jooplaan/twentytwentyone-valentinus.git
 ```
 
-## Development with Docker
+#### Set up development with Docker
 
-Make sure Docker is installed and running, and you have wordpress/env installed.
+Make sure [Docker](https://docs.docker.com/) is installed and running, and [wordpress/env](https://developer.wordpress.org/block-editor/packages/packages-env/) is installed.
 
-### Install Docker
+##### To install Docker
 https://docs.docker.com/engine/install/
 
-### Install @wordpress/env
+#### To install @wordpress/env
 https://developer.wordpress.org/block-editor/packages/packages-env/
 
 ### Starting the environment
@@ -69,11 +70,4 @@ And activate Valentinus Twenty Twenty One
 ```
 $ wp-env stop
 ```
-
-## Development
-This child theme started using the in-dept review of the Twenty Twenty One with tutorial how to create a child theme from:
-https://kinsta.com/blog/twenty-twenty-one-theme/
-Check this blog post for ideas to create your own custom Twenty Twenty One child theme.
-
-
 
