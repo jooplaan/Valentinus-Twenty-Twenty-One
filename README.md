@@ -1,6 +1,11 @@
 # Valentinus Twenty Twenty One
 A WordPress child theme for the Twenty Twenty-One theme.
 
+## Added features
+
+* Optional right sidebar with widget area
+* Custom Block pattern example
+
 ## Fresh install using zip file
 Simplest way to use this:
 
@@ -21,7 +26,7 @@ Change to the directory where you want to install this setup and install WP.
 $ wp core download
 ```
 
-Next change into the themes directory and checkout this repository.
+Next change into the themes directory and clone this repository.
 
 ```
 $ cd wp-content/themes
