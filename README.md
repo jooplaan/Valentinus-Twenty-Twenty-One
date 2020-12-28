@@ -3,8 +3,8 @@ A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hac
 
 ## Added features
 
-* Optional right sidebar with widget area
-* Custom Block pattern example
+* Optional right sidebar with widget area ([v1.1](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.1))
+* Custom Block pattern example ([v1.0](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.0))
 
 ## How to use this
 
