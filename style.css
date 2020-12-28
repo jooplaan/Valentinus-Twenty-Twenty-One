@@ -34,14 +34,6 @@ h2,
 		margin: 0 auto;
 	}
 
-	.active-sidebar-right #main.site-main {
-		margin: 0;
-	}
-
-	.active-sidebar-right .entry {
-		max-width: 100%;
-	}
-
 	.active-sidebar-right #primary .widget-area {
 		grid-template-columns: none;
 		display: block;
@@ -49,6 +41,8 @@ h2,
 		max-width: 380px;
 	}
 
+	.active-sidebar-right #main.site-main,
+	.active-sidebar-right .entry,
 	.active-sidebar-right .post-thumbnail,
 	.active-sidebar-right .entry-content .wp-audio-shortcode,
 	.active-sidebar-right .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
