@@ -37,3 +37,40 @@ add_action( 'init', function(){
 	)
 	);
 });
+
+
+/**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ * @since Valentinus Twenty Twenty One 1.1
+ */
+function twentytwentyone_valentinus_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'twentytwentyone-valentinus' ),
+			'id'            => 'sidebar-right',
+			'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentytwentyone-valentinus' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'twentytwentyone_valentinus_widgets_init' );
+
+
+/**
+ * Add body class when sidebar is active.
+ *
+ * @since Valentinus Twenty Twenty One 1.1
+ */
+function twentytwentyone_valentinus_custom_body_class( $classes ) {
+	if ( is_active_sidebar( 'sidebar-right' ) ) {
+		$classes[] = 'active-sidebar-right';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'twentytwentyone_valentinus_custom_body_class' );

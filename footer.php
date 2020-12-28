@@ -13,6 +13,7 @@
 
 ?>
 			</main><!-- #main -->
+			<?php get_sidebar( 'sidebar-right' ); ?>
 		</div><!-- #primary -->
 	</div><!-- #content -->
 

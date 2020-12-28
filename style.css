@@ -11,15 +11,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyone-valentinus
 */
 
-
-
 :root{
 	/* Font Family */
 	--global--font-primary-child-sans-serif: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif);
-
 	--global--font-family-child-serif: var(--font-headings, "Times New Roman", Times, serif);
 }
-
 
 h1,
 .h1,
@@ -27,4 +23,39 @@ h1,
 h2,
 .h2 {
 	font-family: var(--global--font-family-child-serif);
+}
+
+@media only screen and (min-width: 1024px) {
+	.active-sidebar-right #primary {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		column-gap: calc(4 * var(--global--spacing-horizontal));
+		max-width: var(--responsive--alignwide-width);
+		margin: 0 auto;
+	}
+
+	.active-sidebar-right #main.site-main {
+		margin: 0;
+	}
+
+	.active-sidebar-right .entry {
+		max-width: 100%;
+	}
+
+	.active-sidebar-right #primary .widget-area {
+		grid-template-columns: none;
+		display: block;
+		margin-top: 0;
+		max-width: 380px;
+	}
+
+	.active-sidebar-right .post-thumbnail,
+	.active-sidebar-right .entry-content .wp-audio-shortcode,
+	.active-sidebar-right .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+	.active-sidebar-right .default-max-width,
+	.active-sidebar-right hr.wp-block-separator:not(.is-style-dots):not(.alignwide) {
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
