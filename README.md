@@ -5,6 +5,7 @@ A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hac
 
 ## Added features
 
+* Add template to use with sidebar (v1.2)(https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.2)
 * Optional right sidebar with widget area ([v1.1.1](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.1.1))
 * Custom Block pattern example ([v1.0](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.0))
 
