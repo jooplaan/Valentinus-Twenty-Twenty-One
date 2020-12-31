@@ -93,9 +93,13 @@ add_action( 'widgets_init', 'twentytwentyone_valentinus_widgets_init' );
  * @return array
  */
 function twentytwentyone_valentinus_custom_body_class( $classes ) {
-	if ( is_active_sidebar( 'sidebar-right' ) ) {
-		$classes[] = 'active-sidebar-right';
+	global $template;
+	if ( basename( $template ) == 'single-with-sidebar.php' ) {
+		if ( is_active_sidebar( 'sidebar-right' ) ) {
+			$classes[] = 'active-sidebar-right';
+		}
+		return $classes;
 	}
-	return $classes;
 }
 add_filter( 'body_class', 'twentytwentyone_valentinus_custom_body_class' );
+
