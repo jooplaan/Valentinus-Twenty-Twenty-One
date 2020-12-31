@@ -2,10 +2,10 @@
 /**
  * The template for the sidebar containing the main widget area
  *
- * @package WordPress
- * @subpackage Valentinus Twenty Twenty One
+ * @package Valentinus Twenty Twenty One
  * @since Valentinus Twenty Twenty One 1.1
  */
+
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-right' ) ) : ?>
