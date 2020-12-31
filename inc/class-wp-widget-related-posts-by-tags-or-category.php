@@ -80,10 +80,11 @@ class WP_Widget_Related_Posts_By_Tags_Or_Category extends WP_Widget {
 		$categories = get_the_category( $post_id );
 		if ( ! $categories ) {
 			$cat_arr = array();
-		}
-		$cat_arr = array();
-		foreach ( $categories as $term ) {
-			$cat_arr[] = $term->term_id;
+		} else {
+			$cat_arr = array();
+			foreach ( $categories as $term ) {
+				$cat_arr[] = $term->term_id;
+			}
 		}
 
 		$r = new WP_Query(
@@ -104,9 +105,9 @@ class WP_Widget_Related_Posts_By_Tags_Or_Category extends WP_Widget {
 					'no_found_rows'       => true,
 					'post_status'         => 'publish',
 					'ignore_sticky_posts' => true,
-					'post__not_in' => array( $post_id ),
-					'tax_query' => array(
-						'relation' => 'OR',
+					'post__not_in'        => array( $post_id ),
+					'tax_query'           => array(
+						'relation' => 'AND',
 						array(
 							'category__in' => $cat_arr,
 						),
