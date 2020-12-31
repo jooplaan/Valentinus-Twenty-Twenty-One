@@ -103,3 +103,15 @@ function twentytwentyone_valentinus_custom_body_class( $classes ) {
 }
 add_filter( 'body_class', 'twentytwentyone_valentinus_custom_body_class' );
 
+/**
+ * Include custom widget for related posts.
+ */
+require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts.php' );
+
+/**
+ * Register widget.
+ */
+function register_custom_widgets() {
+	register_widget( 'WP_Widget_Related_Posts' );
+}
+add_action( 'widgets_init', 'register_custom_widgets' );
