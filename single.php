@@ -1,10 +1,12 @@
 <?php
 /**
- * Template Name: Single article with sidebar
- * Template Post Type: post, page, product
+ * The template for displaying all single posts
  *
- * @package Valentinus Twenty Twenty One
- * @since Valentinus Twenty Twenty One 1.2
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
  */
 
 get_header();

@@ -1,19 +1,19 @@
 <?php
 /**
- * Widget API: WP_Widget_Related_Posts class
+ * Widget API: WP_Widget_Related_Posts_By_Categories class
  *
  * @package Valentinus Twenty Twenty One
  * @since Valentinus Twenty Twenty One 1.3
  */
 
 /**
- * Class used to implement a Related Posts widget.
+ * Class used to implement a widget to list posts with same categories.
  *
  * @since 1.3
  *
  * @see WP_Widget
  */
-class WP_Widget_Related_Posts extends WP_Widget {
+class WP_Widget_Related_Posts_By_Categories extends WP_Widget {
 
 	/**
 	 * Sets up a new Related Posts widget instance.
@@ -22,12 +22,12 @@ class WP_Widget_Related_Posts extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname'                   => 'widget_related_entries',
-			'description'                 => __( 'Related content for article.' ),
+			'classname'                   => 'widget_related_posts_by_categories',
+			'description'                 => __( 'Related content by category for posts.', 'twentytwentyone-valentinus' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'related-posts', __( 'Related Posts' ), $widget_ops );
-		$this->alt_option_name = 'widget_related_entries';
+		parent::__construct( 'related-posts-by-category', __( 'Related Posts by Category', 'twentytwentyone-valentinus' ), $widget_ops );
+		$this->alt_option_name = 'widget_related_posts_by_categories';
 	}
 
 	/**
@@ -44,7 +44,7 @@ class WP_Widget_Related_Posts extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$default_title = __( 'Related Posts' );
+		$default_title = __( 'Related Posts by Category' );
 		$title         = ( ! empty( $instance['title'] ) ) ? $instance['title'] : $default_title;
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
@@ -65,93 +65,41 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		 * Get the category terms for the post.
 		 */
 		$categories = get_the_category( $post_id );
-		$cat_posts_found = false;
-		if ( $categories ) {
-			$cat_ids = array();
-			foreach ( $categories as $category ) {
-				$cat_ids[] = $category->term_id;
-			}
-
-			$c = new WP_Query(
-				/**
-				 * Filters the arguments for the Related Posts widget.
-				 *
-				 * @since 1.3
-				 *
-				 * @see WP_Query::get_posts()
-				 *
-				 * @param array $args     An array of arguments used to retrieve the related posts.
-				 * @param array $instance Array of settings for the current widget.
-				 */
-				apply_filters(
-					'widget_posts_args',
-					array(
-						'posts_per_page'      => $number,
-						'no_found_rows'       => true,
-						'post_status'         => 'publish',
-						'ignore_sticky_posts' => true,
-						'category__in' => array( $cat_ids ),
-						'post__not_in' => array( $post_id ),
-					),
-					$instance
-				)
-			);
-			if ( $c->have_posts() ) {
-				$cat_posts_found = true;
-			}
-		}
-
-		/*
-		 * Get the tags for the post.
-		 */
-		$tag_posts_found = false;
-		$tags = wp_get_post_tags( $post_id );
-		if ( $tags ) {
-
-			$first_tag = $tags[0]->term_id;
-			$t = new WP_Query(
-				/**
-				 * Filters the arguments for the Related Posts widget.
-				 *
-				 * @since 1.3
-				 *
-				 * @see WP_Query::get_posts()
-				 *
-				 * @param array $args     An array of arguments used to retrieve the related posts.
-				 * @param array $instance Array of settings for the current widget.
-				 */
-				apply_filters(
-					'widget_posts_args',
-					array(
-						'posts_per_page'      => $number,
-						'no_found_rows'       => true,
-						'post_status'         => 'publish',
-						'ignore_sticky_posts' => true,
-						'tag__in' => array( $first_tag ),
-						'post__not_in' => array( $post_id ),
-					),
-					$instance
-				)
-			);
-			if ( $t->have_posts() ) {
-				$tag_posts_found = true;
-			}
-		}
-
-		if ( ! $tag_posts_found && ! $cat_posts_found ) {
+		if ( ! $categories ) {
 			return;
 		}
+		$cat_arr = array();
+		foreach ( $categories as $term ) {
+			$cat_arr[] = $term->term_id;
+		}
 
-		$result = new WP_Query();
-		if ( $tag_posts_found && $cat_posts_found ) {
-			$result->posts = array_slice( array_unique( array_merge( $c->posts, $t->posts ), SORT_REGULAR ), 0, $number );
-		} else {
-			if ( $tag_posts_found ) {
-				$result->posts = $t->posts;
-			}
-			if ( $cat_posts_found ) {
-				$result->posts = $c->posts;
-			}
+		$r = new WP_Query(
+			/**
+			 * Filters the arguments for the Related Posts widget.
+			 *
+			 * @since 1.3
+			 *
+			 * @see WP_Query::get_posts()
+			 *
+			 * @param array $args     An array of arguments used to retrieve the related posts.
+			 * @param array $instance Array of settings for the current widget.
+			 */
+			apply_filters(
+				'widget_posts_args',
+				array(
+					'posts_per_page'      => $number,
+					'no_found_rows'       => true,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => true,
+					'category__in' => $cat_arr,
+					'post__not_in' => array( $post_id ),
+				),
+				$instance
+			)
+		);
+
+		if ( ! $r->have_posts() ) {
+			return;
 		}
 		?>
 
@@ -176,20 +124,20 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		?>
 
 		<ul>
-			<?php foreach ( $result->posts as $related_post ) : ?>
+			<?php foreach ( $r->posts as $recent_post ) : ?>
 				<?php
-				$post_title   = get_the_title( $related_post->ID );
+				$post_title   = get_the_title( $recent_post->ID );
 				$title        = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
 				$aria_current = '';
 
-				if ( get_queried_object_id() === $related_post->ID ) {
+				if ( get_queried_object_id() === $recent_post->ID ) {
 					$aria_current = ' aria-current="page"';
 				}
 				?>
 				<li>
-					<a href="<?php the_permalink( $related_post->ID ); ?>"<?php echo $aria_current; ?>><?php echo $title; ?></a>
+					<a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>><?php echo $title; ?></a>
 					<?php if ( $show_date ) : ?>
-						<span class="post-date"><?php echo get_the_date( '', $related_post->ID ); ?></span>
+						<span class="post-date"><?php echo get_the_date( '', $recent_post->ID ); ?></span>
 					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>

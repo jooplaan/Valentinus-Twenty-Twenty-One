@@ -8,6 +8,12 @@
  */
 
 /**
+ * Include classes for custom widgets.
+ */
+require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts-by-tags.php' );
+require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts-by-categories.php' );
+
+/**
  * Enqueue scripts and style from parent theme.
  */
 function twentytwentyone_styles() {
@@ -94,7 +100,7 @@ add_action( 'widgets_init', 'twentytwentyone_valentinus_widgets_init' );
  */
 function twentytwentyone_valentinus_custom_body_class( $classes ) {
 	global $template;
-	if ( basename( $template ) == 'single-with-sidebar.php' ) {
+	if ( basename( $template ) == 'single.php' ) {
 		if ( is_active_sidebar( 'sidebar-right' ) ) {
 			$classes[] = 'active-sidebar-right';
 		}
@@ -104,14 +110,10 @@ function twentytwentyone_valentinus_custom_body_class( $classes ) {
 add_filter( 'body_class', 'twentytwentyone_valentinus_custom_body_class' );
 
 /**
- * Include custom widget for related posts.
- */
-require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts.php' );
-
-/**
  * Register widget.
  */
 function register_custom_widgets() {
-	register_widget( 'WP_Widget_Related_Posts' );
+	register_widget( 'WP_Widget_Related_Posts_By_Categories' );
+	register_widget( 'WP_Widget_Related_Posts_By_Tags' );
 }
 add_action( 'widgets_init', 'register_custom_widgets' );
