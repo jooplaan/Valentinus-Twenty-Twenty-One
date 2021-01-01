@@ -65,12 +65,46 @@ class WP_Widget_Related_Posts_By_Tags_Or_Category extends WP_Widget {
 		 * Get the tags for the post.
 		 */
 		$tags = wp_get_post_tags( $post_id );
-		if ( ! $tags ) {
-			$tag_arr = array();
-		} else {
-			$tag_arr = array();
+		$tag_arr = array();
+		$posts_with_tags = false;
+
+		if ( $tags ) {
 			foreach ( $tags as $tag ) {
 				$tag_arr[] = $tag->term_id;
+			}
+			if ( count( $tag_arr ) > 0 ) {
+				$posts_with_tags = true;
+			}
+		}
+
+		if ( $posts_with_tags ) {
+			$t = new WP_Query(
+				/**
+				 * Filters the arguments for the Related Posts widget.
+				 *
+				 * @since 1.3
+				 *
+				 * @see WP_Query::get_posts()
+				 *
+				 * @param array $args     An array of arguments used to retrieve the related posts.
+				 * @param array $instance Array of settings for the current widget.
+				 */
+				apply_filters(
+					'widget_posts_args',
+					array(
+						'posts_per_page'      => $number,
+						'no_found_rows'       => true,
+						'post_status'         => 'publish',
+						'ignore_sticky_posts' => true,
+						'post__not_in'        => array( $post_id ),
+						'tag__in' => $tag_arr,
+						'post__not_in' => array( $post_id ),
+					),
+					$instance
+				)
+			);
+			if ( $t->have_posts() ) {
+				$posts_with_tags = true;
 			}
 		}
 
@@ -78,51 +112,65 @@ class WP_Widget_Related_Posts_By_Tags_Or_Category extends WP_Widget {
 		 * Get the category terms for the post.
 		 */
 		$categories = get_the_category( $post_id );
-		if ( ! $categories ) {
-			$cat_arr = array();
-		} else {
-			$cat_arr = array();
+		$cat_arr = array();
+		$posts_with_categories = false;
+
+		if ( $categories ) {
 			foreach ( $categories as $term ) {
 				$cat_arr[] = $term->term_id;
 			}
+			if ( count( $cat_arr ) > 0 ) {
+				$posts_with_categories = true;
+			}
 		}
 
-		$r = new WP_Query(
-			/**
-			 * Filters the arguments for the Related Posts widget.
-			 *
-			 * @since 1.3
-			 *
-			 * @see WP_Query::get_posts()
-			 *
-			 * @param array $args     An array of arguments used to retrieve the related posts.
-			 * @param array $instance Array of settings for the current widget.
-			 */
-			apply_filters(
-				'widget_posts_args',
-				array(
-					'posts_per_page'      => $number,
-					'no_found_rows'       => true,
-					'post_status'         => 'publish',
-					'ignore_sticky_posts' => true,
-					'post__not_in'        => array( $post_id ),
-					'tax_query'           => array(
-						'relation' => 'AND',
-						array(
-							'category__in' => $cat_arr,
-						),
-						array(
-							'tag__in'      => $tag_arr,
-						),
+		if ( $posts_with_categories ) {
+			$c = new WP_Query(
+				/**
+				 * Filters the arguments for the Related Posts widget.
+				 *
+				 * @since 1.3
+				 *
+				 * @see WP_Query::get_posts()
+				 *
+				 * @param array $args     An array of arguments used to retrieve the related posts.
+				 * @param array $instance Array of settings for the current widget.
+				 */
+				apply_filters(
+					'widget_posts_args',
+					array(
+						'posts_per_page'      => $number,
+						'no_found_rows'       => true,
+						'post_status'         => 'publish',
+						'ignore_sticky_posts' => true,
+						'post__not_in'        => array( $post_id ),
+						'category__in' => $cat_arr,
+						'post__not_in' => array( $post_id ),
 					),
-				),
-				$instance
-			)
-		);
+					$instance
+				)
+			);
+			if ( $c->have_posts() ) {
+				$posts_with_categories = true;
+			}
+		}
 
-		if ( ! $r->have_posts() ) {
+		if ( ! $posts_with_categories && ! $posts_with_tags ) {
 			return;
 		}
+
+		$result = new WP_Query();
+		if ( $posts_with_categories && $posts_with_tags ) {
+			$result->posts = array_slice( array_unique( array_merge( $c->posts, $t->posts ), SORT_REGULAR ), 0, $number );
+		} else {
+			if ( $posts_with_categories ) {
+				$result->posts = $c->posts;
+			}
+			if ( $posts_with_tags ) {
+				$result->posts = $t->posts;
+			}
+		}
+
 		?>
 
 		<?php echo $args['before_widget']; ?>
@@ -146,20 +194,20 @@ class WP_Widget_Related_Posts_By_Tags_Or_Category extends WP_Widget {
 		?>
 
 		<ul>
-			<?php foreach ( $r->posts as $recent_post ) : ?>
+			<?php foreach ( $result->posts as $related_post ) : ?>
 				<?php
-				$post_title   = get_the_title( $recent_post->ID );
+				$post_title   = get_the_title( $related_post->ID );
 				$title        = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
 				$aria_current = '';
 
-				if ( get_queried_object_id() === $recent_post->ID ) {
+				if ( get_queried_object_id() === $related_post->ID ) {
 					$aria_current = ' aria-current="page"';
 				}
 				?>
 				<li>
-					<a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>><?php echo $title; ?></a>
+					<a href="<?php the_permalink( $related_post->ID ); ?>"<?php echo $aria_current; ?>><?php echo $title; ?></a>
 					<?php if ( $show_date ) : ?>
-						<span class="post-date"><?php echo get_the_date( '', $recent_post->ID ); ?></span>
+						<span class="post-date"><?php echo get_the_date( '', $related_post->ID ); ?></span>
 					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
