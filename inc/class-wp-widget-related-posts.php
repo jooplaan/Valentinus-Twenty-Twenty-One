@@ -188,11 +188,11 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		}
 		?>
 
-		<?php echo $args['before_widget']; ?>
+		<?php echo wp_kses( $args['before_widget'], $this->allowed_html() ); ?>
 
 		<?php
 		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
+			echo wp_kses( $args['before_title'] . $title . $args['after_title'], $this->allowed_html() );
 		}
 
 		$format = current_theme_supports( 'html5', 'navigation-widgets' ) ? 'html5' : 'xhtml';
@@ -220,9 +220,10 @@ class WP_Widget_Related_Posts extends WP_Widget {
 				}
 				?>
 				<li>
-					<a href="<?php the_permalink( $related_post->ID ); ?>"<?php echo $aria_current; ?>><?php echo $title; ?></a>
+					<a href="<?php the_permalink( $related_post->ID ); ?>"<?php echo wp_kses( $aria_current, $this->allowed_html() ); ?>><?php echo wp_kses( $title, $this->allowed_html() ); ?></a>
 					<?php if ( $show_date ) : ?>
-						<span class="post-date"><?php echo get_the_date( '', $related_post->ID ); ?></span>
+						<span class="post-date">
+							<?php echo wp_kses( get_the_date( '', $related_post->ID ), $this->allowed_html() ); ?></span>
 					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
@@ -232,8 +233,7 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		if ( 'html5' === $format ) {
 			echo '</nav>';
 		}
-
-		echo $args['after_widget'];
+		echo wp_kses( $args['after_widget'], $this->allowed_html() );
 	}
 
 	/**
@@ -303,4 +303,27 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		</p>
 		<?php
 	}
+
+	/**
+	 * Allowed HTML for output.
+	 *
+	 * @since 1.3
+	 *
+	 * @return array Allowed HTML.
+	 */
+	private function allowed_html() {
+		return array(
+			'a' => array(
+				'href' => array(),
+				'title' => array(),
+			),
+			'br' => array(),
+			'em' => array(),
+			'strong' => array(),
+			'p' => array(),
+			'h2' => array(),
+			'h3' => array(),
+		);
+	}
+
 }
