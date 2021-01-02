@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-01T08:51:48+00:00\n"
+"POT-Creation-Date: 2021-01-02T08:19:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: twentytwentyone-valentinus\n"
@@ -34,47 +34,47 @@ msgstr ""
 msgid "https://www.jooplaan.com/"
 msgstr ""
 
-#: functions.php:58
+#: functions.php:56
 msgid "Valentinus"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:62
 msgid "Author Bio"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:63
 msgctxt "Block pattern description"
 msgid "A block with 2 columns that displays an avatar image, a heading and a paragraph."
 msgstr ""
 
-#: functions.php:84
+#: functions.php:82
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:84
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: inc/class-wp-widget-related-posts-by-categories.php:26
-msgid "Related content by category for posts."
-msgstr ""
-
-#: inc/class-wp-widget-related-posts-by-categories.php:29
-msgid "Related Posts by Category"
-msgstr ""
-
-#: inc/class-wp-widget-related-posts-by-tags-or-category.php:26
+#: inc/class-wp-widget-related-posts.php:26
 msgid "Related content by tags or category."
 msgstr ""
 
-#: inc/class-wp-widget-related-posts-by-tags-or-category.php:29
+#: inc/class-wp-widget-related-posts.php:29
 msgid "Related Posts by Tags or category"
 msgstr ""
 
-#: inc/class-wp-widget-related-posts-by-tags.php:26
-msgid "Related content by tags."
+#: inc/class-wp-widget-related-posts.php:287
+msgid "Display posts with same categories"
 msgstr ""
 
-#: inc/class-wp-widget-related-posts-by-tags.php:29
-msgid "Related Posts by Tags"
+#: inc/class-wp-widget-related-posts.php:292
+msgid "Display posts with same tags"
+msgstr ""
+
+#: inc/class-wp-widget-related-posts.php:297
+msgid "Display post images"
+msgstr ""
+
+#: inc/class-wp-widget-related-posts.php:302
+msgid "Display post date"
 msgstr ""
