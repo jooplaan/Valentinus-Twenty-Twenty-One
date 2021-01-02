@@ -321,8 +321,16 @@ class WP_Widget_Related_Posts extends WP_Widget {
 			'em' => array(),
 			'strong' => array(),
 			'p' => array(),
-			'h2' => array(),
+			'h2' => array(
+				'id' => array(),
+				'class' => array(),
+			),
 			'h3' => array(),
+			'section' => array(
+				'id' => array(),
+				'class' => array(),
+			),
+			'nav' => array(),
 		);
 	}
 
