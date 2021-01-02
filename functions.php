@@ -8,6 +8,11 @@
  */
 
 /**
+ * Load translation files.
+ */
+load_theme_textdomain( 'twentytwentyone-valentinus', get_stylesheet_directory() . '/languages' );
+
+/**
  * Include classes for custom widget.
  */
 require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts.php' );

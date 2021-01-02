@@ -284,12 +284,12 @@ class WP_Widget_Related_Posts extends WP_Widget {
 
 		<p>
 			<input class="checkbox" type="checkbox"<?php checked( $show_posts_with_same_categories ); ?> id="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_categories' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'show_posts_with_same_categories' ) ); ?>" />
-			<label for="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_categories' ) ); ?>"><?php esc_html_e( 'Display post with same categories', 'twentytwentyone-valentinus' ); ?></label>
+			<label for="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_categories' ) ); ?>"><?php esc_html_e( 'Display posts with same categories', 'twentytwentyone-valentinus' ); ?></label>
 		</p>
 
 		<p>
 			<input class="checkbox" type="checkbox"<?php checked( $show_posts_with_same_tags ); ?> id="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_tags' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'show_posts_with_same_tags' ) ); ?>" />
-			<label for="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_tags' ) ); ?>"><?php esc_html_e( 'Display post with same tags', 'twentytwentyone-valentinus' ); ?></label>
+			<label for="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_tags' ) ); ?>"><?php esc_html_e( 'Display posts with same tags', 'twentytwentyone-valentinus' ); ?></label>
 		</p>
 
 		<p>
