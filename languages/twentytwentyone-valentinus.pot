@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-02T08:19:29+00:00\n"
+"POT-Creation-Date: 2021-01-02T19:28:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: twentytwentyone-valentinus\n"
@@ -34,33 +34,33 @@ msgstr ""
 msgid "https://www.jooplaan.com/"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:61
 msgid "Valentinus"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:67
 msgid "Author Bio"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:68
 msgctxt "Block pattern description"
 msgid "A block with 2 columns that displays an avatar image, a heading and a paragraph."
 msgstr ""
 
-#: functions.php:82
-msgid "Sidebar"
+#: functions.php:87
+msgid "Sidebar single post"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:89
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
 #: inc/class-wp-widget-related-posts.php:26
-msgid "Related content by tags or category."
+msgid "Related posts by tag or category."
 msgstr ""
 
 #: inc/class-wp-widget-related-posts.php:29
-msgid "Related Posts by Tags or category"
+msgid "Related Posts"
 msgstr ""
 
 #: inc/class-wp-widget-related-posts.php:287

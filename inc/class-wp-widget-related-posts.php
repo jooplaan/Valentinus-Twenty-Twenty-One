@@ -22,12 +22,12 @@ class WP_Widget_Related_Posts extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname'                   => 'widget_posts_by_tags_or_category',
-			'description'                 => __( 'Related content by tags or category.', 'twentytwentyone-valentinus' ),
+			'classname'                   => 'widget_posts',
+			'description'                 => __( 'Related posts by tag or category.', 'twentytwentyone-valentinus' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'related-posts-by-tags-or-category', __( 'Related Posts by Tags or category', 'twentytwentyone-valentinus' ), $widget_ops );
-		$this->alt_option_name = 'widget_posts_by_tags_or_category';
+		parent::__construct( 'related-posts', __( 'Related Posts', 'twentytwentyone-valentinus' ), $widget_ops );
+		$this->alt_option_name = 'widget_posts';
 	}
 
 	/**

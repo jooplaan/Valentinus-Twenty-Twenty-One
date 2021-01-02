@@ -8,8 +8,8 @@
 
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-right' ) ) : ?>
-	<aside id="secondary" class="sidebar-right widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-right' ); ?>
+<?php if ( is_active_sidebar( 'sidebar-single-post' ) ) : ?>
+	<aside id="secondary" class="sidebar-single-post widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-single-post' ); ?>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>

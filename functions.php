@@ -84,8 +84,8 @@ add_action( 'init', 'twentytwentyone_valentinus_add_block_patterns' );
 function twentytwentyone_valentinus_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar', 'twentytwentyone-valentinus' ),
-			'id'            => 'sidebar-right',
+			'name'          => __( 'Sidebar single post', 'twentytwentyone-valentinus' ),
+			'id'            => 'sidebar-single-post',
 			'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentytwentyone-valentinus' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
