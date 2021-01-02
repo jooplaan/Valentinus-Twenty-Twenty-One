@@ -11,16 +11,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyone-valentinus
 */
 
+.entry-content img,
 .entry .post-thumbnail,
 .active-sidebar-right .entry-header {
 	max-width: 892px !important;
-}
-
-
-@media only screen and (min-width: 1024px) {
-	.widget-area {
-		grid-template-columns: repeat(4, 1fr);
-	}
 }
 
 @media only screen and (min-width: 1024px) {
