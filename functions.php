@@ -8,11 +8,9 @@
  */
 
 /**
- * Include classes for custom widgets.
+ * Include classes for custom widget.
  */
-require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts-by-tags-or-category.php' );
-require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts-by-tags.php' );
-require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts-by-categories.php' );
+require_once( get_stylesheet_directory() . '/inc/class-wp-widget-related-posts.php' );
 
 /**
  * Enqueue scripts and style from parent theme.
@@ -114,8 +112,6 @@ add_filter( 'body_class', 'twentytwentyone_valentinus_custom_body_class' );
  * Register widget.
  */
 function register_custom_widgets() {
-	register_widget( 'WP_Widget_Related_Posts_By_Tags_Or_Category' );
-	register_widget( 'WP_Widget_Related_Posts_By_Categories' );
-	register_widget( 'WP_Widget_Related_Posts_By_Tags' );
+	register_widget( 'WP_Widget_Related_Posts' );
 }
 add_action( 'widgets_init', 'register_custom_widgets' );
