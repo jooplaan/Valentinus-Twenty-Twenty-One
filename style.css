@@ -11,6 +11,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyone-valentinus
 */
 
+
+
+.post-navigation .post-title {
+	word-wrap: break-word;
+}
+
 .entry-content img,
 .entry .post-thumbnail,
 .active-sidebar-single-post .entry-header {
@@ -61,4 +67,10 @@ Text Domain: twentytwentyone-valentinus
 		max-width: 892px !important;
 	}
 
+	.active-sidebar-single-post .wp-block-gallery .blocks-gallery-image img,
+	.active-sidebar-single-post .wp-block-gallery .blocks-gallery-item img,
+	.active-sidebar-single-post .blocks-gallery-grid .blocks-gallery-image img,
+	.active-sidebar-single-post .blocks-gallery-grid .blocks-gallery-item img {
+		width: 100%;
+	}
 }
