@@ -19,6 +19,13 @@ Text Domain: twentytwentyone-valentinus
 }
 
 /*
+ * Make site header full width.
+*/
+#site-header, #site-header img {
+	width: 100%;
+}
+
+/*
  * Incorporate sidebar.
 */
 @media only screen and (min-width: 1024px) {
