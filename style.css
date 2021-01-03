@@ -1,13 +1,17 @@
 /*
 Theme Name: Valentinus Twenty Twenty One
 Theme URI: https://github.com/jooplaan/valentinustwentytwentyone
-Description: A Twenty Twenty-One Child Theme.
+Description: A Twenty Twenty-One Child Theme. Added features: optional sidebar for posts, header image support.
 Author: Joop Laan
 Author URI: https://www.jooplaan.com/
 Template: twentytwentyone
+Requires at least: 5.3
+Tested up to: 5.6
+Requires PHP: 5.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, custom-header
 Text Domain: twentytwentyone-valentinus
 */
 

@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Valentinus Twenty Twenty One 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/twentytwentyone-"
 "valentinus\n"
-"POT-Creation-Date: 2021-01-02T19:28:03+00:00\n"
-"PO-Revision-Date: 2021-01-02 20:29+0100\n"
+"POT-Creation-Date: 2021-01-03T11:48:47+00:00\n"
+"PO-Revision-Date: 2021-01-03 12:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -26,8 +26,12 @@ msgid "https://github.com/jooplaan/valentinustwentytwentyone"
 msgstr "https://github.com/jooplaan/valentinustwentytwentyone"
 
 #. Description of the theme
-msgid "A Twenty Twenty-One Child Theme."
-msgstr "Een Twenty Twenty-One child thema."
+msgid ""
+"A Twenty Twenty-One Child Theme. Added features: optional sidebar for posts, "
+"header image support."
+msgstr ""
+"Een Twenty Twenty-One Child thema. Functies toegevoegd: optionele zijbalk "
+"voor berichten, ondersteuning voor header afbeelding."
 
 #. Author of the theme
 msgid "Joop Laan"
@@ -37,28 +41,11 @@ msgstr "Joop Laan"
 msgid "https://www.jooplaan.com/"
 msgstr "https://www.jooplaan.com/"
 
-#: functions.php:61
-msgid "Valentinus"
-msgstr "Valentinus"
-
-#: functions.php:67
-msgid "Author Bio"
-msgstr "Over de auteur"
-
-#: functions.php:68
-msgctxt "Block pattern description"
-msgid ""
-"A block with 2 columns that displays an avatar image, a heading and a "
-"paragraph."
-msgstr ""
-"Een blok met 2 kolommen die een avatarafbeelding, een koptekst en een alinea "
-"weergeven."
-
-#: functions.php:87
+#: functions.php:65
 msgid "Sidebar single post"
 msgstr "Zijbalk bij enkel bericht"
 
-#: functions.php:89
+#: functions.php:67
 msgid "Add widgets here to appear in your sidebar."
 msgstr "Voeg hier widgets aan je sidebar toe."
 
@@ -69,6 +56,10 @@ msgstr "Gerelateerde berichten per tag of categorie."
 #: inc/class-wp-widget-related-posts.php:29
 msgid "Related Posts"
 msgstr "Gerelateerde berichten"
+
+#: inc/class-wp-widget-related-posts.php:47
+msgid "Related Posts by Tags or Category"
+msgstr "Gerelateerde berichten per tag of categorie"
 
 #: inc/class-wp-widget-related-posts.php:287
 msgid "Display posts with same categories"
@@ -85,6 +76,23 @@ msgstr "Afbeeldingen voor berichten weergeven"
 #: inc/class-wp-widget-related-posts.php:302
 msgid "Display post date"
 msgstr "Toon datum"
+
+#~ msgid "A Twenty Twenty-One Child Theme."
+#~ msgstr "Een Twenty Twenty-One child thema."
+
+#~ msgid "Valentinus"
+#~ msgstr "Valentinus"
+
+#~ msgid "Author Bio"
+#~ msgstr "Over de auteur"
+
+#~ msgctxt "Block pattern description"
+#~ msgid ""
+#~ "A block with 2 columns that displays an avatar image, a heading and a "
+#~ "paragraph."
+#~ msgstr ""
+#~ "Een blok met 2 kolommen die een avatarafbeelding, een koptekst en een "
+#~ "alinea weergeven."
 
 #~ msgid "Sidebar"
 #~ msgstr "Zijbalk"

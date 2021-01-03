@@ -44,7 +44,7 @@ class WP_Widget_Related_Posts extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$default_title = __( 'Related Posts by Tags or Category' );
+		$default_title = __( 'Related Posts by Tags or Category', 'twentytwentyone-valentinus' );
 		$title         = ( ! empty( $instance['title'] ) ) ? $instance['title'] : $default_title;
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
