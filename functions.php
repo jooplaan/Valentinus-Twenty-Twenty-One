@@ -98,3 +98,53 @@ function register_custom_widgets() {
 	register_widget( 'WP_Widget_Related_Posts' );
 }
 add_action( 'widgets_init', 'register_custom_widgets' );
+
+/**
+ * Registers theme support for header image.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
+ * @since Valentinus Twenty Twenty One 1.4
+ */
+function valentinus_custom_header_setup() {
+	$defaults = array(
+		'default-image'          => get_stylesheet_directory_uri() . '/assets/images/default-header.jpg',
+		'header-text'            => false,
+		'default-text-color'     => '000',
+		'width'                  => 1000,
+		'height'                 => 198,
+		'random-default'         => false,
+		'uploads'                => false,
+		'wp-head-callback'       => 'wphead_valentinus',
+		'admin-head-callback'    => 'adminhead_valentinus',
+		'admin-preview-callback' => 'adminpreview_cb',
+	);
+}
+add_action( 'after_setup_theme', 'valentinus_custom_header_setup' );
+
+$header_info = array(
+	'width'         => 2048,
+	'height'        => 400,
+	'default-image' => get_stylesheet_directory_uri() . '/assets/images/header-boat-3.jpg',
+);
+add_theme_support( 'custom-header', $header_info );
+
+$header_images = array(
+	'boat' => array(
+		'url'           => get_stylesheet_directory_uri() . '/assets/images/header-boat.jpg',
+		'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/images/header-boat-thumbnail.jpg',
+		'description'   => 'Boat',
+	),
+	'boat-2' => array(
+		'url'           => get_stylesheet_directory_uri() . '/assets/images/header-boat-2.jpg',
+		'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/images/header-boat-2-thumbnail.jpg',
+		'description'   => 'Boat 2',
+	),
+	'boat-3' => array(
+		'url'           => get_stylesheet_directory_uri() . '/assets/images/header-boat-3.jpg',
+		'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/images/header-boat-3-thumbnail.jpg',
+		'description'   => 'Boat 3',
+	),
+
+);
+register_default_headers( $header_images );
