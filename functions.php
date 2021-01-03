@@ -83,8 +83,8 @@ add_action( 'widgets_init', 'twentytwentyone_valentinus_widgets_init' );
 function twentytwentyone_valentinus_custom_body_class( $classes ) {
 	global $template;
 	if ( basename( $template ) == 'single.php' ) {
-		if ( is_active_sidebar( 'sidebar-right' ) ) {
-			$classes[] = 'active-sidebar-right';
+		if ( is_active_sidebar( 'sidebar-single-post' ) ) {
+			$classes[] = 'active-sidebar-single-post';
 		}
 		return $classes;
 	}
