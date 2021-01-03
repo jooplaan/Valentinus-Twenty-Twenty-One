@@ -11,19 +11,18 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyone-valentinus
 */
 
-
-
+/*
+ * Edge case small fix for extra long title in Next/Previous links.
+*/
 .post-navigation .post-title {
 	word-wrap: break-word;
 }
 
-.entry-content img,
-.entry .post-thumbnail,
-.active-sidebar-single-post .entry-header {
-	max-width: 892px !important;
-}
-
+/*
+ * Incorporate sidebar.
+*/
 @media only screen and (min-width: 1024px) {
+
 	.active-sidebar-single-post #primary {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
@@ -50,6 +49,13 @@ Text Domain: twentytwentyone-valentinus
 		margin-left: 0;
 		margin-right: 0;
 	}
+
+	.active-sidebar-single-post .entry-content img,
+	.active-sidebar-single-post .entry .post-thumbnail,
+	.active-sidebar-single-post .entry-header {
+		max-width: 892px !important;
+	}
+
 
 	.active-sidebar-single-post .entry-content > .alignleft {
 		margin-left: 0;
