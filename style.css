@@ -13,39 +13,51 @@ Text Domain: twentytwentyone-valentinus
 
 .entry-content img,
 .entry .post-thumbnail,
-.active-sidebar-right .entry-header {
+.active-sidebar-single-post .entry-header {
 	max-width: 892px !important;
 }
 
 @media only screen and (min-width: 1024px) {
-	.active-sidebar-right #primary {
+	.active-sidebar-single-post #primary {
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		column-gap: calc(2 * var(--global--spacing-horizontal));
 		max-width: var(--responsive--alignwide-width);
 		margin: 0 auto;
 	}
 
-	.active-sidebar-right #primary .widget-area {
+	.active-sidebar-single-post #primary .widget-area {
 		grid-template-columns: none;
 		display: block;
 		margin-top: 0;
 		width: 100%;
 	}
 
-	.active-sidebar-right #main.site-main,
-	.active-sidebar-right .entry,
-	.active-sidebar-right .post-thumbnail,
-	.active-sidebar-right .entry-content .wp-audio-shortcode,
-	.active-sidebar-right .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
-	.active-sidebar-right .default-max-width,
-	.active-sidebar-right hr.wp-block-separator:not(.is-style-dots):not(.alignwide) {
-		max-width: 100%;
+	.active-sidebar-single-post #main.site-main,
+	.active-sidebar-single-post .entry,
+	.active-sidebar-single-post .post-thumbnail,
+	.active-sidebar-single-post .entry-content .wp-audio-shortcode,
+	.active-sidebar-single-post .entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), [class*="inner-container"] > :not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+	.active-sidebar-single-post .default-max-width,
+	.active-sidebar-single-post hr.wp-block-separator:not(.is-style-dots):not(.alignwide) {
+		max-width: 892px !important;
 		margin-left: 0;
 		margin-right: 0;
 	}
 
-	.active-sidebar-right .entry-header {
+	.active-sidebar-single-post .entry-content > .alignleft {
+		margin-left: 0;
+		margin-right: var(--global--spacing-horizontal);
+		max-width: inherit !important;
+	}
+
+	.active-sidebar-single-post .entry-content > .alignright {
+		margin-left: var(--global--spacing-horizontal);
+		margin-right: 0;
+		max-width: inherit !important;
+	}
+
+	.active-sidebar-single-post .entry-header {
 		max-width: 892px !important;
 	}
 
