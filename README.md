@@ -8,8 +8,6 @@ A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hac
 * Add support for header image ([v1.4](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.4))
 * Add widget for related posts ([v1.3](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.3))
 * Add template to use with sidebar ([v1.2](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.2))
-* Optional right sidebar with widget area ([v1.1.1](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.1.1))
-* Custom Block pattern example ([v1.0](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v1.0))
 
 ## How to use this
 
