@@ -73,4 +73,3 @@ And activate Valentinus Twenty Twenty One
 ```
 $ wp-env stop
 ```
-
