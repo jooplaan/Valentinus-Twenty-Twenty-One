@@ -5,7 +5,7 @@ Theme with optional sidebar for posts, header image support. Includes a widget t
 
 ## Added features
 
-* Support for header image ([v1.4](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.4))
+* Support for header image ([v1.4](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.4.1))
 * Widget for related posts ([v1.3](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.3))
 * Optional sidebar for posts ([v1.2](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.2))
 
