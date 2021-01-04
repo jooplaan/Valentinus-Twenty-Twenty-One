@@ -1,13 +1,13 @@
 <?php
 /**
- * Widget API: WP_Widget_Related_Posts_By_Tags class
+ * WP_Widget_Related_Posts_By_Tags class
  *
  * @package Valentinus Twenty Twenty One
  * @since Valentinus Twenty Twenty One 1.3
  */
 
 /**
- *  Class used to implement a widget to list posts with same tags.
+ *  Class used to implement a widget to list related posts.
  *
  * @since 1.3
  *
