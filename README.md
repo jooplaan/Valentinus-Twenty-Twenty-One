@@ -1,7 +1,7 @@
 # Valentinus Twenty Twenty One
 Theme with optional sidebar for posts, header image support. Includes a widget to display Related posts. A Twenty Twenty-One Child Theme.
 
-![Screenshot](https://raw.githubusercontent.com/jooplaan/twentytwentyone-valentinus/main/screenshot.png)
+![Screenshot](https://github.com/jooplaan/twentytwentyone-valentinus/raw/main/screenshot.png)
 
 ## Added features
 
