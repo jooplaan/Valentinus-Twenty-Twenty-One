@@ -1,13 +1,13 @@
 # Valentinus Twenty Twenty One
-A WordPress child theme for the Twenty Twenty-One theme. Made to explore and hack the Twenty Twenty One theme.
+Theme with optional sidebar for posts, header image support. Includes a widget to display Related posts. A Twenty Twenty-One Child Theme.
 
 ![Screenshot](https://raw.githubusercontent.com/jooplaan/twentytwentyone-valentinus/main/screenshot.png)
 
 ## Added features
 
-* Add support for header image ([v1.4](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.4))
-* Add widget for related posts ([v1.3](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.3))
-* Add template to use with sidebar ([v1.2](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.2))
+* Support for header image ([v1.4](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.4))
+* Widget for related posts ([v1.3](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.3))
+* Optional sidebar for posts ([v1.2](https://github.com/jooplaan/twentytwentyone-valentinus/releases/tag/v.1.2))
 
 ## How to use this
 
