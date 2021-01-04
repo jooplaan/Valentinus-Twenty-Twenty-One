@@ -42,9 +42,11 @@ $ git clone https://github.com/jooplaan/twentytwentyone-valentinus.git
 Make sure [Docker](https://docs.docker.com/) is installed and running, and [wordpress/env](https://developer.wordpress.org/block-editor/packages/packages-env/) is installed.
 
 ##### To install Docker
+
 https://docs.docker.com/engine/install/
 
 #### To install @wordpress/env
+
 https://developer.wordpress.org/block-editor/packages/packages-env/
 
 ### Starting the environment
