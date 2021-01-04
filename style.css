@@ -1,7 +1,7 @@
 /*
 Theme Name: Valentinus Twenty Twenty One
 Theme URI: https://github.com/jooplaan/valentinustwentytwentyone
-Description: A Twenty Twenty-One Child Theme. Added features: optional sidebar for posts, header image support.
+Description: Theme with optional sidebar for posts, header image support. Includes a widget to display Related posts. A Twenty Twenty-One Child Theme.
 Author: Joop Laan
 Author URI: https://www.jooplaan.com/
 Template: twentytwentyone
@@ -16,7 +16,7 @@ Text Domain: twentytwentyone-valentinus
 */
 
 /*
- * Edge case small fix for extra long title in Next/Previous links.
+ * Edge case fix for extra long titles in Next/Previous links.
 */
 .post-navigation .post-title {
 	word-wrap: break-word;
