@@ -57,7 +57,6 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 		$show_posts_with_same_tags = isset( $instance['show_posts_with_same_tags'] ) ? $instance['show_posts_with_same_tags'] : true;
 		$show_posts_with_same_categories = isset( $instance['show_posts_with_same_categories'] ) ? $instance['show_posts_with_same_categories'] : true;
-		$show_post_images = isset( $instance['show_post_images'] ) ? $instance['show_post_images'] : false;
 
 		/*
 		 * Get the post ID.
@@ -252,7 +251,6 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		$instance['number']    = (int) $new_instance['number'];
 		$instance['show_posts_with_same_categories'] = isset( $new_instance['show_posts_with_same_categories'] ) ? (bool) $new_instance['show_posts_with_same_categories'] : false;
 		$instance['show_posts_with_same_tags'] = isset( $new_instance['show_posts_with_same_tags'] ) ? (bool) $new_instance['show_posts_with_same_tags'] : false;
-		$instance['show_post_images'] = isset( $new_instance['show_post_images'] ) ? (bool) $new_instance['show_post_images'] : false;
 		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
 		return $instance;
 	}
@@ -268,7 +266,6 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_posts_with_same_categories    = isset( $instance['show_posts_with_same_categories'] ) ? absint( $instance['show_posts_with_same_categories'] ) : true;
 		$show_posts_with_same_tags    = isset( $instance['show_posts_with_same_tags'] ) ? absint( $instance['show_posts_with_same_tags'] ) : true;
-		$show_post_images    = isset( $instance['show_post_images'] ) ? absint( $instance['show_post_images'] ) : false;
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
@@ -290,11 +287,6 @@ class WP_Widget_Related_Posts extends WP_Widget {
 		<p>
 			<input class="checkbox" type="checkbox"<?php checked( $show_posts_with_same_tags ); ?> id="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_tags' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'show_posts_with_same_tags' ) ); ?>" />
 			<label for="<?php echo esc_html( $this->get_field_id( 'show_posts_with_same_tags' ) ); ?>"><?php esc_html_e( 'Display posts with same tags', 'twentytwentyone-valentinus' ); ?></label>
-		</p>
-
-		<p>
-			<input class="checkbox" type="checkbox"<?php checked( $show_post_images ); ?> id="<?php echo esc_html( $this->get_field_id( 'show_post_images' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'show_post_images' ) ); ?>" />
-			<label for="<?php echo esc_html( $this->get_field_id( 'show_post_images' ) ); ?>"><?php esc_html_e( 'Display post images', 'twentytwentyone-valentinus' ); ?></label>
 		</p>
 
 		<p>
