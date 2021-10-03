@@ -1,0 +1,16 @@
+{
+  "name": "jooplaan/twentytwentyone-valentinus",
+  "description": "A WordPress child theme for the Twenty Twenty-One theme. ",
+  "keywords": ["wordpress", "theme"],
+  "homepage": "https://github.com/jooplaan/twentytwentyone-valentinus",
+  "authors": [
+    {
+      "name": "Joop Laan",
+      "homepage": "https://github.com/jooplaan/"
+    }
+  ],
+  "type": "wordpress-theme",
+  "require": {
+    "php": ">=5.6"
+  }
+}
